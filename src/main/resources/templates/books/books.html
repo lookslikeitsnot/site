@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head.html (pageTitle=#{books.pagename})"></head>
+<body>
+	<header th:replace="fragments/header.html"></header>
+	<h1 th:text="#{books.books}"></h1>
+	<table>
+		<tr>
+			<th th:text="#{books.table.title}"></th>
+			<th th:text="#{books.table.author}"></th>
+		</tr>
+		<tr th:each="book : ${books}">
+			<td th:text="${book.title}"></td>
+			<td th:text="${book.author.name}"></td>
+		</tr>
+	</table>
+</body>
